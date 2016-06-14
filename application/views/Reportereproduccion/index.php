@@ -27,20 +27,21 @@
 	                </div>
 	                <div style="margin-top: -28px;"></div>
 	                <div class="panel-body" id="informacion" style="width: 1080px;overflow-x: scroll;">
-	                    <table class="table table-bordered table-condensed table-hover" id="tablacontenido" style="width: 1500px;">
+	                    <table class="table table-bordered table-condensed table-hover" id="tablacontenido" style="width: 1600px;">
 	                        <thead>
 	                        	<tr>
-	                                <th class="center" colspan="18">Registro Reproduccion</th>
+	                                <th class="center" colspan="19">Registro Reproduccion</th>
 	                            </tr>
 	                            <tr>
 	                                <th class="center" colspan="12">Fecha Imp. <?php echo date('d-m-Y');?></th>
-	                                <th class="center" colspan="6">Fecha Del X Al Y</th>
+	                                <th class="center" colspan="7">Fecha Del X Al Y</th>
 	                            </tr>
 	                            <tr>
 	                            	<th class="center" rowspan="2">#</th>
 	                                <th class="center" rowspan="2">RP</th>
 	                                <th class="center" rowspan="2">Nombre</th>
 	                                <th class="center" rowspan="2">Nro Partos</th>
+	                                <th class="center" rowspan="2">Nro Serv.</th>
 	                                <th class="center" colspan="3">Ultimo Parto</th>
 	                                <th class="center" colspan="4">Servicio</th>
 	                                <th class="center" >Probable Parto</th>
@@ -76,6 +77,9 @@
 	                        				<?php 
 	                        					foreach ($value["partos"] as $val) { ?>
 	                        						<td class="center"><?php echo $val["nropartos"] ?></td>
+	                        					<?php }
+	                        					foreach ($value["servicios"] as $val) { ?>
+	                        						<td class="center"><?php echo $val["nroservicio"] ?></td>
 	                        					<?php }
 	                        					foreach ($value["ultimoparto"] as $val) { ?>
 	                        						<td class="center"><?php echo $val["parult_fecha"] ?></td>

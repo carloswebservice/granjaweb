@@ -19,6 +19,10 @@ class Reportereproduccion extends Controlador_Base {
 			$Reproductoras['reproductora'][$key]["partos"] = $parto;
 		}
 		foreach ($Reproductoras['reproductora'] as $key => $value) {
+			$servicio = $this->modelo_base->MostrarArray("select count(ser_animal) as nroservicio from servicio where ser_animal=".$value["ani_id"]);
+			$Reproductoras['reproductora'][$key]["servicios"] = $servicio;
+		}
+		foreach ($Reproductoras['reproductora'] as $key => $value) {
 			$parto = $this->modelo_base->MostrarArray("select MAX(par_fecha) as fecha from parto where par_animal=".$value["ani_id"]);
 			if ($parto[0]["fecha"]!="") {
 				$parto = $this->modelo_base->MostrarArray("select p.par_fecha as parult_fecha, sc.scr_abreviatura as parult_sexo,ts.tps_abreviatura as parult_tiposerv from parto as p inner join servicio as s on(p.par_servicio=s.ser_id) inner join tipo_servicio as ts on (s.ser_tipo_servicio=ts.tps_id) inner join sexo_cria as sc on(p.par_sexo_cria=sc.scr_id) where p.par_fecha='".$parto[0]["fecha"]."' and p.par_animal=".$value["ani_id"]);
