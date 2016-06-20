@@ -1617,10 +1617,11 @@ span.star:before {
 	top: 1px;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-	background-color: #1caf9a;
+	background-color: #fff;
 	border-color: #DDDDDD #DDDDDD transparent;
 	border-top: 2px solid #DDDDDD;
-	color: #333333;
+	color: #1caf9a;
+	font-weight: bold;
 	line-height: 16px;
 	margin-top: -1px;
 	z-index: 12;

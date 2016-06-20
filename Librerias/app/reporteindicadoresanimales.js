@@ -1,7 +1,8 @@
 $(function(){
 	$("#modreporte").addClass("active open");
-	$("#reqreporteanimales").addClass("active");
+	$("#reqreporteindicadoresanimales").addClass("active");
 })
+
 function imprimir(){
 	$(".navbar-content").hide();
 	window.print();

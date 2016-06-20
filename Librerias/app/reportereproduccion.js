@@ -7,7 +7,7 @@ function imprimir(){
 	$(".navbar-content").hide();
 	window.print();
 	$(".navbar-content").show();
-	$("#tablacontenido").css("width","1500px");
+	$("#tablacontenido").css("width","1600px");
 }
 $("#paricion").on("change", function(){
     $.ajax({
