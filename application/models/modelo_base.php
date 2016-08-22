@@ -207,5 +207,23 @@
 			);
 			$this->db->insert("log_transacciones",$data);
 		}
+
+		public function InsertarCaja($tabla){
+			$ultimo= $this->db->query("select max(idcaja) as ultimo from caja")->result_array();
+			$ultreg= $this->db->query("select *from caja where idcaja=".$ultimo[0]["ultimo"])->result_array();
+			if ($ultreg[0]["saldo_total"]=="") {
+				return "ErrorI";
+			}else{
+				$data = array(
+					"situacion" => 1
+				);
+				$estado = $this->db->insert($tabla, $data);
+				if ($estado) {
+					return "SuccessI";
+				}else{
+					return "ErrorI";
+				}
+			}			
+		}
 	}
 ?>

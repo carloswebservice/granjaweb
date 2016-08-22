@@ -125,7 +125,15 @@
 					<li class="dropdown current-user">
 						<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" >
 							<img src="<?php echo base_url()?>/Librerias/assets/images/avatar-1-small.jpg" class="circle-img">
-							<span class="username"><?php echo $_SESSION["usuario"]; ?></span>
+							<span class="username">
+								<?php 
+									if (isset($_SESSION["usuario"])) {
+										echo $_SESSION["usuario"]; 
+									}else{
+										header('Location:'.base_url());
+									}									
+								?>
+							</span>
 							<i class="clip-chevron-down"></i>
 						</a>
 						<ul class="dropdown-menu">

@@ -4930,3 +4930,19 @@ td.column-right {
 #simbolo,.diaevento:hover {
 	cursor: pointer;
 }
+
+
+.cajainput{
+	border: 1px solid #fff !important;
+	font-size: 12px !important;
+	height: 20px !important;
+	color:black !important;
+}
+.cajainput:hover{
+	border: 1px solid #D5D5D5 !important;
+}
+
+#tipocaja{
+	width: 60px;
+	padding: 0px !important;
+}

@@ -17,7 +17,8 @@ abstract class Controlador_Base extends CI_Controller {
 			$data["param"] = $array;
 		}
 		$data["permisos"] = $this->modelo_base->traer_modulos();
-
+		//echo "<pre>";
+		//print_r($data["permisos"]); exit();
 		$this->load->view("layout",$data);
 	}
 
